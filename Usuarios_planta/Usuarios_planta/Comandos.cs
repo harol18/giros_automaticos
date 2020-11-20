@@ -41,8 +41,7 @@ namespace Usuarios_planta
                     Txtnombre.Text = registro["nombre"].ToString();
                     Txtcuenta.Text = registro["cuenta"].ToString();
                     Txtscoring.Text = registro["scoring"].ToString();
-                    TxtCedula_Gestor.Text = registro["cedula_gestor"].ToString();                    
-                    Txtnom_gestor.Text = registro["nombre_gestor"].ToString();
+                    TxtCedula_Gestor.Text = registro["cedula_gestor"].ToString();              
                     Txtcoordinador.Text = registro["nombre_coordinador"].ToString();
                     Txtcod_oficina.Text = registro["codigo_oficina"].ToString();
                     Txtnom_oficina.Text = registro["sucursal"].ToString();

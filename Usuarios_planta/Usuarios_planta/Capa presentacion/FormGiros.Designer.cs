@@ -133,7 +133,6 @@
             this.dgvDatos_Punto = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.btnAgregar_Carteras = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -241,6 +240,7 @@
             this.TxtRadicado.Size = new System.Drawing.Size(124, 30);
             this.TxtRadicado.TabIndex = 0;
             this.TxtRadicado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtRadicado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeclaEnter);
             // 
             // label20
             // 
@@ -1396,13 +1396,6 @@
             this.btnAgregar_Carteras.UseVisualStyleBackColor = false;
             this.btnAgregar_Carteras.Click += new System.EventHandler(this.btnAgregar_Carteras_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(1083, 426);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 278;
-            // 
             // FormGiros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1410,7 +1403,6 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAgregar_Carteras);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.btnDescargar_Excel);
@@ -1549,6 +1541,5 @@
         private System.Windows.Forms.DataGridView dgvDatos_Punto;
         private System.Windows.Forms.Label lbltotal;
         private FontAwesome.Sharp.IconButton btnAgregar_Carteras;
-        private System.Windows.Forms.Panel panel1;
     }
 }

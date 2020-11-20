@@ -145,11 +145,6 @@ namespace Usuarios_planta.Formularios
             TxtAsunto.Text = "GIRO CHEQUE CPK " + Txtnombre.Text + " CC " + Txtcedula.Text;
         }
 
-        private void btnAñadir_Carteras_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void TxtCedula_Gestor_TextChanged(object sender, EventArgs e)
         {
             MySqlCommand comando = new MySqlCommand("SELECT * FROM gestores WHERE Cedula_Gestor = @Cedula_Gestor ", con);
@@ -158,7 +153,13 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                datos_correo.correo_gestor = registro["Correo_Gestor"].ToString();                
+                datos_correo.correo_gestor = registro["Correo_Gestor"].ToString();
+                Txtnom_gestor.Text = registro["nombre_gestor"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Asesor no se encuentra creado en la abse de datos, por favor reportar !!");
+                con.Close();
             }
             con.Close();
         }
@@ -478,6 +479,15 @@ namespace Usuarios_planta.Formularios
             else
             {
                 MessageBox.Show("No hay carteras para remitir", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TeclaEnter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) // Si es un enter
+            {
+                e.Handled = true; //Interceptamos la pulsación
+                SendKeys.Send("{TAB}"); //Pulsamos la tecla Tabulador por código
             }
         }
     }
